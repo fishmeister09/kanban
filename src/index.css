@@ -1,0 +1,16 @@
+@font-face {
+  font-family: MovementV;
+  src: local('MovementV'),
+    url('./assets/fonts/MovementV.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: local('Montserrat'),
+    url('./assets/fonts/Montserrat.ttf') format('truetype');
+}
+@font-face {
+  font-family: JetBrains;
+  src: local('JetBrains'),
+    url('./assets/fonts/JetBrains.ttf') format('truetype');
+}

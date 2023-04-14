@@ -1,0 +1,27 @@
+:root {
+  --background: #fefaf7;
+  --gray: #9b9b9b;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
+}
+.main-container {
+  display: block;
+  position: absolute;
+  height: auto;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 1rem;
+  border: var(--black) 5px solid;
+  box-shadow: 10px 8px var(--black);
+}
