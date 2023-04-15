@@ -1,0 +1,81 @@
+.container {
+    max-width: 600px;
+    min-height: 50vh;
+    display: flex;
+    margin: auto;
+}
+
+@media only screen and (max-width: 650px) {
+    .container {
+        margin: auto 2rem;
+    }
+}
+
+.main {
+    width: 100%;
+    margin: auto;
+    margin-top: 4rem;
+}
+.main input {
+    display: block;
+    border: none;
+    outline: none;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.backsvg, .binsvg {
+    max-height: 2rem;
+    opacity: 0.4;
+}
+.backsvg:hover, .binsvg:hover {
+    opacity: 0.8;
+}
+
+.title {
+    padding-bottom: 2rem;
+    overflow: hidden;
+}
+.title div {
+    display: flex;
+    justify-content: space-between;
+}
+.title div p {
+    cursor: pointer;
+}
+.title input {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+.title span {
+    color: rgb(80, 80, 80);
+}
+
+.status select {
+    padding: 2px 6px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background-color: #fbccd1;
+}
+
+.divider {
+    margin: 2rem 0;
+    border: 1px solid rgb(230, 230, 230);
+}
+
+.description {
+    display: flex;
+}
+.description .textarea {
+    min-height: 40vh;
+    font-family: inherit;
+    font-size: 1.2rem;
+    width: 100%;
+    float: left;
+    border: none;
+    outline: none;
+}

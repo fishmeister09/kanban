@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0.5rem;
+}
+.kanban {
+  display: flex;
+  height: 100%;
+  overflow-x: scroll;
+}
+
+.kanban::-webkit-scrollbar {
+  height: 10px;
+}
+
+.kanban::-webkit-scrollbar-track {
+  border-radius: 0px;
+}
+
+.kanban::-webkit-scrollbar-thumb {
+  background-color: var(--black);
+}
