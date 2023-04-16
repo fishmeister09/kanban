@@ -8,11 +8,6 @@
   white-space: nowrap;
 }
 
-/* .newTask {
-  position: relative;
-  top: 0;
-} */
-
 .task:hover {
   color: var(--gray1);
 }

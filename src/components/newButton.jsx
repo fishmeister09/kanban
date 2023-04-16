@@ -4,11 +4,13 @@ import style from './newButton.module.css';
 const NewButton = ({ data, setData, type, statusIndex }) => {
   const navigate = useNavigate();
   const newTask = () => {
+    const date = `${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()} ${new Date().getHours()}:${new Date().getMinutes()}`;
+
     const newData = [...data];
     newData[statusIndex].tasks.push({
       id: Date.now().toString(),
       title: 'Untitled',
-      date: new Date().toString(),
+      date: date,
       status: data[statusIndex].id,
       description: '',
     });

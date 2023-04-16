@@ -1,81 +1,65 @@
 .container {
-    max-width: 600px;
-    min-height: 50vh;
-    display: flex;
-    margin: auto;
+  width: 80vw;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  margin: auto;
+  border: var(--black) 5px solid;
+  background-color: var(--white);
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 70vw;
+  }
 }
 
-@media only screen and (max-width: 650px) {
-    .container {
-        margin: auto 2rem;
-    }
+.screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 1rem;
 }
 
-.main {
-    width: 100%;
-    margin: auto;
-    margin-top: 4rem;
+.deleteButton {
+  font-weight: 200;
+  cursor: pointer;
+  color: var(--white);
 }
-.main input {
-    display: block;
-    border: none;
-    outline: none;
-}
-
-.nav {
-    display: flex;
-    justify-content: space-between;
+.deleteButton:hover {
+  font-weight: 900;
+  color: #f7625d;
+  text-decoration: underline;
 }
 
-.backsvg, .binsvg {
-    max-height: 2rem;
-    opacity: 0.4;
+.titleInput {
+  font-size: 1.2rem;
+  font-family: 'JetBrains';
+  font-weight: 900;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--white);
+  text-align: center;
 }
-.backsvg:hover, .binsvg:hover {
-    opacity: 0.8;
-}
-
-.title {
-    padding-bottom: 2rem;
-    overflow: hidden;
-}
-.title div {
-    display: flex;
-    justify-content: space-between;
-}
-.title div p {
-    cursor: pointer;
-}
-.title input {
-    font-size: 2.5rem;
-    font-weight: 900;
-}
-.title span {
-    color: rgb(80, 80, 80);
+.row {
+  display: flex;
+  justify-content: space-between;
 }
 
-.status select {
-    padding: 2px 6px;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    background-color: #fbccd1;
+select {
+  padding: 2px 6px;
+  font-size: 1.1rem;
+  font-family: 'JetBrains';
+  border: none;
+  outline: none;
+  background-color: var(--yellow);
 }
 
-.divider {
-    margin: 2rem 0;
-    border: 1px solid rgb(230, 230, 230);
-}
-
-.description {
-    display: flex;
-}
-.description .textarea {
-    min-height: 40vh;
-    font-family: inherit;
-    font-size: 1.2rem;
-    width: 100%;
-    float: left;
-    border: none;
-    outline: none;
+.date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

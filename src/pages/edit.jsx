@@ -1,9 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import DataContext from '../context/DataContext';
 import style from './edit.module.css';
 import back from '../assets/images/larrow.svg';
 import bin from '../assets/images/bin.svg';
-const Page = ({ data, setData, deleteTask }) => {
+import Tiptap from '../components/TipTap';
+import TitleBar from '../components/TitleBar';
+import TitleButton from '../components/TitleButton';
+const Page = () => {
+  const { data, setData } = useContext(DataContext);
   const { statusIndex, taskIndex } = useParams();
   const navigate = useNavigate();
 
@@ -15,9 +20,15 @@ const Page = ({ data, setData, deleteTask }) => {
     target: undefined,
   });
 
+  const deleteTask = (statusIndex, taskIndex) => {
+    const tmp_data = [...data];
+    tmp_data[statusIndex].tasks.splice(taskIndex, 1);
+    setData(tmp_data);
+    localStorage.setItem('data', JSON.stringify(tmp_data));
+  };
+
   useEffect(() => {
     let flag = false;
-
     const newData = [...data];
     const tmpTask = newData[statusIndex].tasks[taskIndex];
     tmpTask.title = values.title;
@@ -37,76 +48,79 @@ const Page = ({ data, setData, deleteTask }) => {
       navigate(
         `/edit/${values.target}/${newData[values.target].tasks.length - 1}`
       );
-    // newData[status]
-  }, [values, statusIndex, taskIndex]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [values, statusIndex, taskIndex]);
 
-  const handleChange = ({ target }, type) => {
-    if (type !== 'status') {
+  const handleChange = (target, type) => {
+    if (type === 'description') {
       setValues({
         ...values,
-        [type]: target.value,
-        target: undefined,
+        [type]: target,
       });
-    } else {
+    } else if (type === 'status') {
       setValues({
         ...values,
         [type]: target.value,
         target:
           target.options[target.options.selectedIndex].getAttribute('target'),
       });
+    } else {
+      setValues({
+        ...values,
+        [type]: target.value,
+        target: undefined,
+      });
     }
   };
 
   return (
     <div className={style.container}>
-      <div className={style.main}>
-        <div className={style.nav}>
-          <img
-            className={style.backsvg}
-            src={back}
-            alt="left arrow"
-            onClick={() => navigate('/')}
-          />
-          <img
-            className={style.binsvg}
-            src={bin}
-            alt="delete bin"
-            onClick={() => {
-              deleteTask(statusIndex, taskIndex);
-              navigate('/');
-              //window.close()
-            }}
-          />
-        </div>
-        <div className={style.title}>
-          <h1>
-            <input
-              value={values.title}
-              onChange={(e) => handleChange(e, 'title')}
-            />
-          </h1>
-          <span>{data[statusIndex].tasks[taskIndex].date}</span>
-        </div>
-        <br />
-        <div className={style.status}>
-          <select
-            value={values.status}
-            onChange={(e) => handleChange(e, 'status')}
-          >
-            {data.map((status, i) => (
-              <option key={i} value={status.id} target={i}>
-                {status.title}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className={style.divider}></div>
-        <div className={style.description}>
-          <textarea
-            className={style.textarea}
+      <TitleBar>
+        <TitleButton />
+        <input
+          className={style.titleInput}
+          value={values.title}
+          onChange={(e) => handleChange(e.target, 'title')}
+        />
+        <p
+          className={style.deleteButton}
+          onClick={() => {
+            deleteTask(statusIndex, taskIndex);
+            navigate('/');
+          }}
+        >
+          DELETE TASK
+        </p>
+      </TitleBar>
+      <div className={style.screen}>
+        <Tiptap value={values.description} onChange={handleChange} />
+
+        {/* <textarea
+          
             onChange={(e) => handleChange(e, 'description')}
-            value={values.description}
-          />
+            
+          /> */}
+
+        <div className={style.row}>
+          <span className={style.date}>
+            {data[statusIndex].tasks[taskIndex].date}
+          </span>
+          <div className={style.status}>
+            <select
+              value={values.status}
+              onChange={(e) => handleChange(e.target, 'status')}
+            >
+              {data.map((status, i) => (
+                <option
+                  key={i}
+                  value={status.id}
+                  target={i}
+                  className={style.option}
+                >
+                  {status.title}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
     </div>

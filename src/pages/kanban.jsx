@@ -1,12 +1,15 @@
+import { useContext } from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
-
+import DataContext from '../context/DataContext';
 import Status from '../components/status';
 import NewButton from '../components/newButton';
-
+import { useWindowDimensions } from '../hooks';
 import style from './kanban.module.css';
 
-const Kanban = ({ data, setData }) => {
-  //const [highlighted, setHighlighted] = useState()
+const Kanban = () => {
+  const { height } = useWindowDimensions();
+  const { data, setData } = useContext(DataContext);
+
   const clearAll = () => {
     localStorage.removeItem('data');
     setData([]);
@@ -82,7 +85,7 @@ const Kanban = ({ data, setData }) => {
     <div className={style.container}>
       {/* <p onClick={clearAll}>Clear all and start again?</p> */}
 
-      <div className={style.kanban}>
+      <div className={style.kanban} style={{ minHeight: height / 1.211 }}>
         <DragDropContext onDragEnd={onDragEnd} onDragUpdate={onDragUpdate}>
           {data?.map((status, statusIndex) => (
             <Status

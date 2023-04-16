@@ -1,17 +1,29 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
+  overflow-y: scroll;
+  margin: 0.5rem 0;
 }
 .kanban {
   display: flex;
-  height: 100%;
   overflow-x: scroll;
+  padding-bottom: 2rem;
 }
 
+.container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.container::-webkit-scrollbar-track {
+  border-radius: 0px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: var(--black);
+  border-right: 7px transparent solid;
+  background-clip: padding-box;
+}
 .kanban::-webkit-scrollbar {
-  height: 10px;
+  height: 6px;
 }
 
 .kanban::-webkit-scrollbar-track {

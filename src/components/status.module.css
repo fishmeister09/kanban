@@ -7,16 +7,13 @@
   width: 100%;
   max-width: 300px;
   margin-right: 1.2rem;
-  height: 500px;
+  min-height: 450px;
+  height: 100%;
   background-color: var(--white);
   border: var(--black) 5px solid;
   box-shadow: 10px 8px var(--black);
 }
-@media screen and (min-height: 768px) {
-  .status {
-    height: 94%;
-  }
-}
+
 .header {
   display: flex;
   width: 100%;
@@ -50,7 +47,7 @@
   color: black;
   background-color: transparent;
   font-family: 'JetBrains';
-  background-color: #ffff50;
+  background-color: var(--yellow);
 }
 
 .buttons img:hover {
@@ -63,8 +60,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 200px;
-  overflow-y: auto;
+  min-height: 2px;
 }
 .tasks::-webkit-scrollbar {
   width: 10px;
@@ -80,10 +76,10 @@
 .task {
   border: 1px solid black;
   box-shadow: 2px 2px black;
-
   margin: 5px 0;
   padding: 0.75rem;
   font-weight: 500;
+  background-color: var(--white);
 }
 .task:hover {
   background-color: var(--window-background);

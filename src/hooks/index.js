@@ -1,3 +1,4 @@
 import getRealTimeDate from './getRealTimeDate';
+import useWindowDimensions from './useWindowDimension';
 
-export { getRealTimeDate };
+export { getRealTimeDate, useWindowDimensions };

@@ -5,6 +5,7 @@
   --white: #ffffff;
   --black: #000000;
   --window-background: #ff5c5c;
+  --yellow: #ffff50;
 }
 
 body {
@@ -29,5 +30,7 @@ body {
   box-shadow: 10px 8px var(--black);
   background-image: url('./assets/images/sphere.grid.png');
   background-color: var(--window-background);
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }

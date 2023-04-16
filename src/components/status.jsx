@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 import { useNavigate } from 'react-router-dom';
 import plus from '../assets/images/plus.png';
-
+import DataContext from '../context/DataContext';
 import NewButton from './newButton';
 import style from './status.module.css';
 
-const Status = ({ statusIndex, status, data, setData }) => {
+const Status = ({ statusIndex, status }) => {
+  const { data, setData } = useContext(DataContext);
   const [title, setTitle] = useState(status.title);
   const navigate = useNavigate();
 
@@ -26,12 +27,11 @@ const Status = ({ statusIndex, status, data, setData }) => {
   };
 
   useEffect(() => {
-    //console.log('changed')
     const newData = [...data];
     newData[statusIndex].title = title;
     setData(newData);
     localStorage.setItem('data', JSON.stringify(data));
-  }, [title]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [title]);
 
   return (
     <div className={style.status}>
@@ -47,7 +47,7 @@ const Status = ({ statusIndex, status, data, setData }) => {
         </div>
       </div>
       <Droppable droppableId={status.id}>
-        {(provided) => (
+        {(provided, snapshot) => (
           <div
             className={style.tasks}
             ref={provided.innerRef}
