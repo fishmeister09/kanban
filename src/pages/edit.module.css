@@ -1,0 +1,65 @@
+.container {
+  width: 80vw;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  margin: auto;
+  border: var(--black) 5px solid;
+  background-color: var(--white);
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 70vw;
+  }
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.deleteButton {
+  font-weight: 200;
+  cursor: pointer;
+  color: var(--white);
+}
+.deleteButton:hover {
+  font-weight: 900;
+  color: #f7625d;
+  text-decoration: underline;
+}
+
+.titleInput {
+  font-size: 1.2rem;
+  font-family: 'JetBrains';
+  font-weight: 900;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--white);
+  text-align: center;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+select {
+  padding: 2px 6px;
+  font-size: 1.1rem;
+  font-family: 'JetBrains';
+  border: none;
+  outline: none;
+  background-color: var(--yellow);
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

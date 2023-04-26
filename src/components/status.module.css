@@ -1,0 +1,86 @@
+.status {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.5rem;
+  padding-bottom: 0;
+  min-width: 250px;
+  width: 100%;
+  max-width: 300px;
+  margin-right: 1.2rem;
+  min-height: 450px;
+  height: 100%;
+  background-color: var(--white);
+  border: var(--black) 5px solid;
+  box-shadow: 10px 8px var(--black);
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0.5rem 0rem;
+  color: #989898;
+}
+.header img {
+  max-width: 1.5rem;
+}
+.header div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+.title {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.title div {
+  max-width: 6rem;
+  overflow: hidden;
+}
+.title div input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  color: black;
+  background-color: transparent;
+  font-family: 'JetBrains';
+  background-color: var(--yellow);
+}
+
+.buttons img:hover {
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border-radius: 2px;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 2px;
+}
+.tasks::-webkit-scrollbar {
+  width: 10px;
+}
+.tasks::-webkit-scrollbar-track {
+  border-radius: 0px;
+}
+.tasks::-webkit-scrollbar-thumb {
+  background-color: var(--black);
+  background-clip: content-box;
+  border-left: 7px solid transparent;
+}
+.task {
+  border: 1px solid black;
+  box-shadow: 2px 2px black;
+  margin: 5px 0;
+  padding: 0.75rem;
+  font-weight: 500;
+  background-color: var(--white);
+}
+.task:hover {
+  background-color: var(--window-background);
+}

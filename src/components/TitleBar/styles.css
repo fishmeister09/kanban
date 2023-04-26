@@ -10,3 +10,15 @@ header {
   font-size: 1.1rem;
   justify-content: space-between;
 }
+
+time {
+  white-space: nowrap;
+}
+header p {
+  white-space: nowrap;
+}
+@media screen and (max-width: 768px) {
+  header p:nth-child(2) {
+    display: none;
+  }
+}

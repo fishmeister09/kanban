@@ -1,0 +1,22 @@
+.round {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+  background-color: #f7625d;
+  border: 1px solid #b93934;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.round p {
+  display: none;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  color: #b93934;
+  font-size: 13px;
+}
+.round:hover p {
+  display: block;
+}

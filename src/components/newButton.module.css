@@ -1,0 +1,13 @@
+.task {
+  background-color: var(--white);
+  padding: 0.75rem;
+  font-weight: 500;
+  color: var(--gray);
+  cursor: pointer;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.task:hover {
+  color: var(--gray1);
+}

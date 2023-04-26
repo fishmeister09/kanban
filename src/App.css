@@ -1,20 +1,24 @@
 :root {
   --background: #fefaf7;
   --gray: #9b9b9b;
+  --gray1: #3a3c3a;
   --white: #ffffff;
   --black: #000000;
+  --window-background: #ff5c5c;
+  --yellow: #ffff50;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat';
+  font-family: 'JetBrains';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background);
 }
 .main-container {
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: absolute;
   height: auto;
   bottom: 0;
@@ -24,4 +28,9 @@ body {
   margin: 1rem;
   border: var(--black) 5px solid;
   box-shadow: 10px 8px var(--black);
+  background-image: url('./assets/images/sphere.grid.png');
+  background-color: var(--window-background);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
