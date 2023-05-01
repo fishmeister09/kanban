@@ -33,12 +33,11 @@
 .title {
   font-size: 0.9rem;
   font-weight: 500;
-}
-.title div {
   max-width: 6rem;
   overflow: hidden;
 }
-.title div input {
+
+.title input {
   width: 100%;
   border: none;
   outline: none;
@@ -49,11 +48,15 @@
   font-family: 'JetBrains';
   background-color: var(--yellow);
 }
+.button {
+  border: none;
+  outline: none;
+  background-color: transparent;
 
-.buttons img:hover {
+  transition: all 0.2s ease-in-out;
+}
+.button:hover {
   cursor: pointer;
-  background-color: #f0f0f0;
-  border-radius: 2px;
 }
 
 .tasks {
