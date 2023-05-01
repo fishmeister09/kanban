@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { DragDropContext } from 'react-beautiful-dnd';
 import DataContext from '../context/DataContext';
-import Status from '../components/status';
+import Board from '../components/Board';
 import NewButton from '../components/newButton';
 import { useWindowDimensions } from '../hooks';
 import style from './kanban.module.css';
@@ -88,7 +88,7 @@ const Kanban = () => {
       <div className={style.kanban} style={{ minHeight: height / 1.211 }}>
         <DragDropContext onDragEnd={onDragEnd} onDragUpdate={onDragUpdate}>
           {data?.map((status, statusIndex) => (
-            <Status
+            <Board
               key={status.id}
               statusIndex={statusIndex}
               status={status}
